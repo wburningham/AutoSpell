@@ -37,6 +37,6 @@ def plugin_loaded():
 			key_map.append(entry)
 
 	current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-	key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'r+')
+	key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'w')
 	key_map_data.write(json.dumps(key_map, indent=2, sort_keys=True))
 	key_map_data.close()
