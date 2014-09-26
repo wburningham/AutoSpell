@@ -9,6 +9,7 @@ def plugin_loaded():
 	# settings.add_on_change('custom_triggers', build)	
 	build()
 
+
 def plugin_unloaded():
 	settings = sublime.load_settings("AutoSpell.sublime-settings")
 	settings.clear_on_change('default_replacements')
@@ -78,9 +79,26 @@ def build():
 			key_map.append(entry)
 
 	current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-	key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'w')
-	# key_map_data.write(json.dumps(key_map, indent=2, sort_keys=True))
+
+	# TODO DRY this
+	# key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'w')
+	# key_map_data.write(json.dumps(key_map))
+	# key_map_data.close()
+
+	key_map_data = open('%s/Default (OSX).sublime-keymap' % current_dir, 'w')
+	key_map_data.write(json.dumps(key_map))
+	key_map_data.close()
+
+	key_map_data = open('%s/Default (Windows).sublime-keymap' % current_dir, 'w')
+	key_map_data.write(json.dumps(key_map))
+	key_map_data.close()
+
+	key_map_data = open('%s/Default (Linux).sublime-keymap' % current_dir, 'w')
 	key_map_data.write(json.dumps(key_map))
 	key_map_data.close()
 
 	sys.stdout.write('Building AutoSpell Index: Finished\n')
+
+class AutoSpell(sublime_plugin.ApplicationCommand):
+	def run(self):
+		print('run AutoSpell')
