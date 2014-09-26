@@ -7,11 +7,11 @@ By default the following characters will trigger a correction:
 
 	-:;_,.  and the enter key
 
-Settings can be added to in `SublimeText -> Preferences -> Package Settings -> AutoSpell -> Settings – User`
+Triggers can be added to in `SublimeText -> Preferences -> Package Settings -> AutoSpell -> Settings – User`
 
-You can add to this list of triggers by modifying the `triggers` section.
+You can add to this list of triggers by modifying the `custom_triggers` section. If you want to disable the default triggers, set `default_triggers` to `false`.
 
-By default the package corrects common words and their capitalized versions. For example `teh` and `Teh` will be replaced by `the` and `The`. You can add to this list of replacements by modifying the `replacements` section.
+By default the package corrects common words and their capitalized versions. For example `teh` and `Teh` will be replaced by `the` and `The`. You can add to this list of replacements by modifying the `custom_replacements` section. If you want to disable the default replacements, set `default_replacements` to `false`.
 
 See the default config for examples.
 
