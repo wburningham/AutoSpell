@@ -80,20 +80,7 @@ def build():
 
 	current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
-	# TODO DRY this
-	# key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'w')
-	# key_map_data.write(json.dumps(key_map))
-	# key_map_data.close()
-
-	key_map_data = open('%s/Default (OSX).sublime-keymap' % current_dir, 'w')
-	key_map_data.write(json.dumps(key_map))
-	key_map_data.close()
-
-	key_map_data = open('%s/Default (Windows).sublime-keymap' % current_dir, 'w')
-	key_map_data.write(json.dumps(key_map))
-	key_map_data.close()
-
-	key_map_data = open('%s/Default (Linux).sublime-keymap' % current_dir, 'w')
+	key_map_data = open('%s/Default.sublime-keymap' % current_dir, 'w')
 	key_map_data.write(json.dumps(key_map))
 	key_map_data.close()
 
