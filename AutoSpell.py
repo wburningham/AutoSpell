@@ -2,17 +2,17 @@ import sublime, sublime_plugin, sys, json, inspect, os
 
 # http://sublimetexttips.com/execute-a-command-every-time-sublime-launches/
 def plugin_loaded():
-	settings = sublime.load_settings("AutoSpell.sublime-settings")
-	settings.add_on_change('default_replacements', build)	
+	# settings = sublime.load_settings("AutoSpell.sublime-settings")
+	# settings.add_on_change('default_replacements', build)	
 	# settings.add_on_change('default_triggers', build)	
 	# settings.add_on_change('custom_replacements', build)	
 	# settings.add_on_change('custom_triggers', build)	
 	build()
 
 
-def plugin_unloaded():
-	settings = sublime.load_settings("AutoSpell.sublime-settings")
-	settings.clear_on_change('default_replacements')
+# def plugin_unloaded():
+	# settings = sublime.load_settings("AutoSpell.sublime-settings")
+	# settings.clear_on_change('default_replacements')
 	# settings.clear_on_change('default_triggers')
 	# settings.clear_on_change('custom_replacements')
 	# settings.clear_on_change('custom_triggers')
@@ -77,6 +77,11 @@ def build():
 			entry['keys'].append(key)
 
 			key_map.append(entry)
+
+
+	if(not key_map):
+		print('no key maps')
+		return
 
 	current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
