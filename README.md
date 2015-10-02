@@ -1,5 +1,6 @@
 AutoSpell
 =============================
+[![Build Status](https://travis-ci.org/wburningham/AutoSpell.svg)](https://travis-ci.org/wburningham/AutoSpell)
 
 Sublime Text 3 packge to auto replace spelling mistakes.
 
