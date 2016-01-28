@@ -10,6 +10,8 @@
     "enter"
   ],
   "default_replacements": {
+    "remvoe": "remove",
+    "fakse": "fake",
     "karam": "karma",
     "resovle": "resolve",
     "adn": "and",
